@@ -1041,7 +1041,8 @@ const MUIRichTextEditor: RefForwardingComponent<TMUIRichTextEditorRef, IMUIRichT
                     <div id={`${editorId}-editor-container`} className={classNames(className, classes.editorContainer, {
                         [classes.editorReadOnly]: !editable,
                         [classes.error]: props.error
-                    })} onClick={handleFocus} onBlur={handleBlur}>
+                    })} onClick={handleFocus} onBlur={handleBlur}
+                    style={{overflow: 'auto'}}>
                         <Editor
                             customStyleMap={customRenderers.style}
                             blockRenderMap={customRenderers.block}
@@ -1054,7 +1055,7 @@ const MUIRichTextEditor: RefForwardingComponent<TMUIRichTextEditorRef, IMUIRichT
                             handlePastedText={handlePastedText}
                             keyBindingFn={keyBindingFn}
                             ref={editorRef}
-                            {...props.draftEditorProps}
+                            {...props.draftEditorProps}                            
                         />
                     </div>
                 </div>
